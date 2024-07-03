@@ -10,5 +10,5 @@ return {
         config = function()
             SetColorScheme()
         end,
-    }
+    },
 }
