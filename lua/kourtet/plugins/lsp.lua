@@ -61,7 +61,11 @@ return {
         }
 
         require("fidget").setup({})
-        require("mason").setup()
+        require("mason").setup({
+            ui = {
+                border = "rounded"
+            }
+        })
 
         local ensure_installed = vim.tbl_keys(servers or {})
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
