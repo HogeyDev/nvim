@@ -49,6 +49,15 @@ return {
 
         local servers = {
             clangd = {},
+            rust_analyzer = {
+                settings = {
+                    ["rust-analyzer"] = {
+                        diagnostics = {
+                            enable = true
+                        }
+                    }
+                },
+            },
             lua_ls = {
                 settings = {
                     Lua = {
