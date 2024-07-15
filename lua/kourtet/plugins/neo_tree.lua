@@ -10,7 +10,7 @@ return {
     config = function()
         require("neo-tree").setup({
             window = {
-                position = "left", -- "left/float" are my preferences
+                position = "float", -- "left/float" are my preferences
                 width = 30, -- not necessary when "float" or "current" is used, just when a location is used
             }
         })

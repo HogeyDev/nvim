@@ -15,3 +15,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
+
+vim.keymap.set("n", "<leader>ce", ":e ~/.config/nvim/<CR>", { silent = true })

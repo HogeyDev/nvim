@@ -16,7 +16,7 @@ return {
 
                 map("gd", require("telescope.builtin").lsp_definitions)
                 map("gr", require("telescope.builtin").lsp_references)
-                map("<leader>r", vim.lsp.buf.rename)
+                map("<leader>lr", vim.lsp.buf.rename)
                 map("K", vim.lsp.buf.hover)
 
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
