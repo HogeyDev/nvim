@@ -16,10 +16,13 @@ return {
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
             },
-            mapping = cmp.mapping.preset.insert({
+            mapping = {
                 ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
                 ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                ["<CR>"] = cmp.mapping.confirm({
+                    behavior = cmp.ConfirmBehavior.Replace,
+                    select = true,
+                }),
 
                 ["<C-Space>"] = function()
                     if cmp.visible() then
@@ -28,10 +31,11 @@ return {
                         cmp.complete()
                     end
                 end
-            }),
+            },
 
             sources = {
                 { name = "nvim_lsp" },
+                { name = "buffer" },
                 { name = "path" },
             }
         })
