@@ -9,6 +9,7 @@ return {
         vim.keymap.set("n", "<leader>fw", require("telescope.builtin").live_grep)
         vim.keymap.set("n", "<leader>fd", require("telescope.builtin").diagnostics)
         vim.keymap.set("n", "<leader>fa", require("telescope.builtin").buffers)
+        vim.keymap.set("n", "<leader>fs", require("telescope.builtin").lsp_document_symbols)
 
         local actions = require("telescope.actions")
         require("telescope").setup({
