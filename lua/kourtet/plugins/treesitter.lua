@@ -3,7 +3,7 @@ return {
     build = ":TSUpdate",
     opts = {
         highlight = {
-            true
+            enable = true,
         },
     },
 }

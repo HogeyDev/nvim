@@ -11,4 +11,8 @@ return {
             SetColorScheme()
         end,
     },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+    }
 }
