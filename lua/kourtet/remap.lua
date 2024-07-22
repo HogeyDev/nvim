@@ -9,11 +9,4 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { silent = true })
 vim.keymap.set("n", "<leader>o", ":Neotree focus<CR>", { silent = true })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-    group = vim.api.nvim_create_augroup("kourtet-highlighting-yank", { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-})
-
 vim.keymap.set("n", "<leader>ce", ":e ~/.config/nvim/<CR>", { silent = true })

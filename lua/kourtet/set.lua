@@ -31,3 +31,10 @@ vim.opt.updatetime = 50
 vim.opt.cmdheight = 0
 
 vim.opt.cursorline = true
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+    group = vim.api.nvim_create_augroup("kourtet-highlighting-yank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
