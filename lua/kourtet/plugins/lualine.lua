@@ -156,7 +156,18 @@ return {
             return msg
           end,
           icon = ' LSP:',
-          color = { fg = '#ffffff', gui = 'bold' },
+          color = { fg = colors.fg, gui = 'bold' },
+        }
+
+        ins_left {
+            function()
+                local rec = vim.fn.reg_recording()
+                if rec ~= '' then
+                    return '@' .. rec
+                end
+                return ''
+            end,
+            color = { fg = colors.magenta, gui = 'italic' },
         }
 
         -- Add components to right sections
