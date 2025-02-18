@@ -32,6 +32,8 @@ vim.opt.cmdheight = 0
 
 vim.opt.cursorline = true
 
+-- vim.highlight.priorities.semantic_tokens = 95
+
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("kourtet-highlighting-yank", { clear = true }),
     callback = function()
@@ -44,3 +46,5 @@ vim.filetype.add({
         is = "ignis",
     },
 })
+
+vim.g.zig_fmt_autosave = 0

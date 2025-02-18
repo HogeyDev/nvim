@@ -17,11 +17,12 @@ return {
                 map("gd", require("telescope.builtin").lsp_definitions)
                 map("gr", require("telescope.builtin").lsp_references)
                 map("<leader>lr", vim.lsp.buf.rename)
+                map("<leader>lf", vim.lsp.buf.format)
                 map("K", vim.lsp.buf.hover)
 
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
                 if client and client.server_capabilities.documentHighlightProvider then
-                local highlight_augroup = vim.api.nvim_create_augroup("kourtet-lsp-highlight", { clear = true })
+                    local highlight_augroup = vim.api.nvim_create_augroup("kourtet-lsp-highlight", { clear = true })
                     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
                         buffer = event.buf,
                         group = highlight_augroup,
@@ -73,6 +74,7 @@ return {
                     }
                 }
             },
+            gopls = {},
         }
 
         require("fidget").setup({})
@@ -90,6 +92,7 @@ return {
                 function(server_name)
                     local server = servers[server_name] or {}
                     server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+                    server.capabilities.semanticTokensProvider = nil
                     require("lspconfig")[server_name].setup(server)
                 end,
             },
