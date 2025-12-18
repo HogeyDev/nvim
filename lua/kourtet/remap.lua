@@ -10,3 +10,5 @@ vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { silent = true })
 vim.keymap.set("n", "<leader>o", ":Neotree focus<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>ce", ":e ~/.config/nvim/<CR>", { silent = true })
+
+vim.keymap.set("n", "<leader>fp", ":lua print(vim.fn.expand('%'))<CR>", { silent = true })

@@ -8,11 +8,15 @@ return {
         "folke/tokyonight.nvim",
         lazy = false,
         config = function()
-            SetColorScheme()
+            SetColorScheme("tokyonight-night")
         end,
     },
     {
         "catppuccin/nvim",
         name = "catppuccin",
+    },
+    {
+        "morhetz/gruvbox",
+        name = "gruvbox",
     }
 }
