@@ -21,16 +21,16 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.opt.winborder = "rounded"
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-
 vim.opt.cmdheight = 0
-
 vim.opt.cursorline = true
+
 
 -- vim.highlight.priorities.semantic_tokens = 95
 
@@ -48,3 +48,7 @@ vim.filetype.add({
 })
 
 vim.g.zig_fmt_autosave = 0
+
+vim.filetype.add({
+    extension = { ebnf = "ebnf", bnf = "ebnf" }
+})

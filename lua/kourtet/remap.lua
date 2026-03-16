@@ -9,4 +9,16 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { silent = true })
 vim.keymap.set("n", "<leader>o", ":Neotree focus<CR>", { silent = true })
 
+vim.keymap.set({"n", "v"}, "<leader>y", "\"+y")
+vim.keymap.set({"n", "v"}, "<leader>p", "\"+p")
+
 vim.keymap.set("n", "<leader>ce", ":e ~/.config/nvim/<CR>", { silent = true })
+
+vim.keymap.set("n", "<leader>gd", function()
+    if vim.o.keymap == "dvorak" then
+        vim.o.keymap = ""
+    else
+        vim.o.keymap = "dvorak"
+        vim.o.iminsert = 1
+    end
+end)
