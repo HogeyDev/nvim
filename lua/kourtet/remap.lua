@@ -14,7 +14,6 @@ vim.keymap.set({"n", "v"}, "<leader>p", "\"+p")
 
 vim.keymap.set("n", "<leader>ce", ":e ~/.config/nvim/<CR>", { silent = true })
 
-<<<<<<< HEAD
 vim.keymap.set("n", "<leader>gd", function()
     if vim.o.keymap == "dvorak" then
         vim.o.keymap = ""
@@ -23,6 +22,5 @@ vim.keymap.set("n", "<leader>gd", function()
         vim.o.iminsert = 1
     end
 end)
-=======
+
 vim.keymap.set("n", "<leader>fp", ":lua print(vim.fn.expand('%'))<CR>", { silent = true })
->>>>>>> db8e7a50e20bdf6741839fd61af95635b66e953e
