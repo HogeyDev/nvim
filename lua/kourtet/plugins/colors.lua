@@ -18,5 +18,17 @@ return {
     {
         "morhetz/gruvbox",
         name = "gruvbox",
-    }
+    },
+    {
+        "loctvl842/monokai-pro.nvim",
+        name = "monokai-pro",
+    },
+    {
+        "mofiqul/dracula.nvim",
+        name = "dracula",
+    },
+    {
+        "gbprod/nord.nvim",
+        name = "nord",
+    },
 }
