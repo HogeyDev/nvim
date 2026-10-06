@@ -12,8 +12,11 @@ return {
 
         cmp.setup({
             completion = { completeopt = "menu,menuone,noinsert" },
+            view = {
+                docs = { auto_open = false }
+            },
             window = {
-                completion = cmp.config.window.bordered(),
+                completion = cmp.config.window.bordered({ max_height = 16 }),
                 documentation = cmp.config.window.bordered(),
             },
             mapping = {
@@ -29,7 +32,10 @@ return {
                     else
                         cmp.complete()
                     end
-                end
+                end,
+
+                ["<M-h>"] = function() cmp.close_docs() end,
+                ["<M-l>"] = function() cmp.open_docs() end,
             },
 
             sources = {

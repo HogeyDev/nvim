@@ -52,3 +52,15 @@ vim.g.zig_fmt_autosave = 0
 vim.filetype.add({
     extension = { ebnf = "ebnf", bnf = "ebnf" }
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function()
+        local buffer = vim.api.nvim_get_current_buf()
+        local lang = vim.treesitter.language.get_lang(vim.bo.filetype)
+
+        -- Only start if we actually have a parser for this language
+        if lang then
+            pcall(vim.treesitter.start, buffer, lang)
+        end
+    end,
+})
