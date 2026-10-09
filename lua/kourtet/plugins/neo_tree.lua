@@ -12,7 +12,8 @@ return {
             window = {
                 position = "left", -- "left/float" are my preferences
                 width = 30,        -- not necessary when "float" or "current" is used, just when a location is used
-            }
+            },
+            close_if_last_window = true,
         })
     end
 }
