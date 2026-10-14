@@ -150,6 +150,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("i", "<M-k>", pum("<C-p>"), { buffer = buf, expr = true, desc = "Completion: previous" })
         vim.keymap.set("i", "<M-l>", pum("<C-y>"), { buffer = buf, expr = true, desc = "Completion: accept" })
 
+        -- Tab accepts the highlighted completion (same as Alt+l); plain Tab otherwise
+        vim.keymap.set("i", "<Tab>", function()
+            return vim.fn.pumvisible() == 1 and "<C-y>" or "<Tab>"
+        end, { buffer = buf, expr = true, desc = "Completion: accept (or Tab)" })
+
         local map = function(lhs, rhs, desc)
             vim.keymap.set("n", lhs, rhs, { buffer = buf, desc = desc })
         end
@@ -183,3 +188,4 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end,
 })
 
+vim.keymap.set("i", "<C-/>", "(*  *)<Esc>2hi", { silent = true })
