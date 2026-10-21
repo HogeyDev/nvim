@@ -76,22 +76,22 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
-local markdown_numbers = vim.api.nvim_create_augroup("MarkdownDynamicNumbers", { clear = true })
-
-vim.api.nvim_create_autocmd({ "InsertEnter", "CmdlineEnter" }, {
-    group = markdown_numbers,
-    callback = function()
-        if vim.bo.filetype == "markdown" then
-            vim.opt_local.number = true
-        end
-    end,
-})
-
-vim.api.nvim_create_autocmd({ "InsertLeave", "CmdlineLeave" }, {
-    group = markdown_numbers,
-    callback = function()
-        if vim.bo.filetype == "markdown" then
-            vim.opt_local.number = false
-        end
-    end,
-})
+-- local markdown_numbers = vim.api.nvim_create_augroup("MarkdownDynamicNumbers", { clear = true })
+--
+-- vim.api.nvim_create_autocmd({ "InsertEnter", "CmdlineEnter" }, {
+--     group = markdown_numbers,
+--     callback = function()
+--         if vim.bo.filetype == "markdown" then
+--             vim.opt_local.number = true
+--         end
+--     end,
+-- })
+--
+-- vim.api.nvim_create_autocmd({ "InsertLeave", "CmdlineLeave" }, {
+--     group = markdown_numbers,
+--     callback = function()
+--         if vim.bo.filetype == "markdown" then
+--             vim.opt_local.number = false
+--         end
+--     end,
+-- })
