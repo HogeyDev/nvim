@@ -41,11 +41,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
-vim.filetype.add({
-    extension = {
-        is = "ignis",
-    },
-})
+-- vim.filetype.add({
+--     extension = {
+--         is = "ignis",
+--     },
+-- })
+-- vim.treesitter.language.register("ignis", "ignis")
 
 vim.g.zig_fmt_autosave = 0
 
